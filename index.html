@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025 中国語スピーチコンテスト 朗読本文｜愛知淑徳大学 交流文化学部</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf6ee;
+  --bg-soft: #f3ecdc;
+  --ink: #2a241c;
+  --ink-soft: #6b6258;
+  --line: #d9cdb4;
+  --primary: #b8443a;
+  --primary-soft: #f3d6cf;
+  --secondary: #6e8b4a;
+  --secondary-soft: #dde6cb;
+  --gold: #c79634;
+  --water: #5a8a9b;
+  --shadow: 0 1px 2px rgba(42,36,28,.06), 0 12px 32px -8px rgba(42,36,28,.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(184,68,58,.06) 0%, transparent 40%),
+    radial-gradient(circle at 92% 92%, rgba(110,139,74,.07) 0%, transparent 45%),
+    var(--bg);
+  color: var(--ink);
+  font-family: "Shippori Mincho", "Noto Serif SC", "Noto Serif JP", serif;
+  min-height: 100vh;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+body { padding: 32px 20px 80px; }
+.container { max-width: 1080px; margin: 0 auto; }
+
+/* ---------- Header ---------- */
+header.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 24px;
+  padding: 24px 8px 28px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 28px;
+  position: relative;
+}
+header.hero::before {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -1px;
+  width: 120px; height: 3px;
+  background: var(--primary);
+}
+.hero-title {
+  font-family: "Shippori Mincho", serif;
+  font-weight: 700;
+  font-size: clamp(24px, 3.4vw, 38px);
+  letter-spacing: .02em;
+  line-height: 1.25;
+}
+.hero-title .zh {
+  color: var(--primary);
+  font-family: "Noto Serif SC", serif;
+  margin-right: 8px;
+}
+.hero-sub {
+  margin-top: 8px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.hero-meta {
+  text-align: right;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 12px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.hero-meta strong {
+  display: block;
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.audio-source-badge {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 11px;
+  color: var(--secondary);
+  background: var(--secondary-soft);
+  padding: 3px 10px;
+  border-radius: 4px;
+  letter-spacing: .05em;
+  font-weight: 500;
+}
+
+/* ---------- Controls ---------- */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  padding: 14px 20px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 13px;
+}
+.controls .group { display: flex; align-items: center; gap: 8px; }
+.controls label { color: var(--ink-soft); font-weight: 500; }
+.seg {
+  display: inline-flex;
+  background: var(--bg-soft);
+  border-radius: 999px;
+  padding: 3px;
+  border: 1px solid var(--line);
+}
+.seg button {
+  border: 0; background: transparent; font: inherit; color: var(--ink-soft);
+  padding: 5px 14px; border-radius: 999px; cursor: pointer;
+  transition: all .15s ease; font-weight: 500;
+}
+.seg button:hover { color: var(--ink); }
+.seg button.active {
+  background: var(--ink); color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+}
+.toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  cursor: pointer; user-select: none;
+  padding: 5px 12px; border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  transition: all .15s ease;
+  color: var(--ink-soft); font-weight: 500;
+}
+.toggle:hover { border-color: var(--ink-soft); }
+.toggle.on {
+  background: var(--ink); color: #fff; border-color: var(--ink);
+}
+.toggle .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor; opacity: .5;
+}
+.toggle.on .dot { opacity: 1; }
+.stop-btn {
+  margin-left: auto;
+  background: var(--primary); color: #fff;
+  border: 0; padding: 7px 16px;
+  border-radius: 999px; cursor: pointer;
+  font: inherit; font-weight: 700; font-size: 13px;
+  letter-spacing: .04em;
+  display: inline-flex; align-items: center; gap: 8px;
+  box-shadow: 0 2px 8px rgba(184,68,58,.3);
+  transition: transform .1s ease, opacity .2s ease;
+  opacity: .35; pointer-events: none;
+}
+.stop-btn.active { opacity: 1; pointer-events: auto; }
+.stop-btn:hover { transform: translateY(-1px); }
+.stop-btn::before {
+  content: ""; width: 9px; height: 9px;
+  background: currentColor; border-radius: 1px;
+}
+
+/* ---------- Text Card ---------- */
+.text-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 32px 36px 36px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+.card-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 6px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed var(--line);
+}
+.card-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: "Noto Serif SC", serif;
+  color: var(--ink-soft); font-size: 13px;
+  letter-spacing: .15em; margin-bottom: 4px; font-weight: 500;
+}
+.card-label .num {
+  display: inline-grid; place-items: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--primary); color: #fff;
+  font-weight: 700; font-size: 13px; letter-spacing: 0;
+}
+.card-title {
+  font-family: "Noto Serif SC", serif; font-weight: 700;
+  font-size: clamp(26px, 3vw, 34px);
+  color: var(--ink); line-height: 1.2; letter-spacing: .03em;
+}
+.card-title .ja {
+  display: block;
+  font-family: "Shippori Mincho", serif;
+  font-size: 14px; color: var(--ink-soft);
+  font-weight: 500; margin-top: 6px; letter-spacing: .04em;
+}
+.card-actions { display: flex; gap: 10px; flex-shrink: 0; }
+.play-all {
+  background: var(--ink); color: #fff;
+  border: 0; padding: 10px 18px; border-radius: 999px;
+  font: inherit;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700; font-size: 13px;
+  cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: transform .1s, background .2s;
+  letter-spacing: .04em;
+}
+.play-all:hover { background: var(--primary); transform: translateY(-1px); }
+.play-all::before {
+  content: ""; width: 0; height: 0;
+  border-left: 9px solid currentColor;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+}
+
+/* ---------- Sections ---------- */
+.section { margin-top: 26px; }
+.section-head {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 14px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.section-tag {
+  font-family: "Noto Serif SC", serif;
+  font-size: 12px; letter-spacing: .2em;
+  color: var(--secondary); font-weight: 700;
+  padding: 3px 10px;
+  border: 1px solid var(--secondary);
+  border-radius: 4px;
+}
+.section-title { font-size: 14px; color: var(--ink-soft); font-weight: 500; }
+.section-play {
+  margin-left: auto;
+  background: transparent; color: var(--secondary);
+  border: 1px solid var(--secondary);
+  padding: 5px 14px; border-radius: 999px;
+  font: inherit;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 600; font-size: 12px;
+  cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: all .15s ease;
+}
+.section-play:hover { background: var(--secondary); color: #fff; }
+.section-play::before { content: "▶"; font-size: 9px; }
+
+/* ---------- Line items (groups) ---------- */
+.lines { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.line {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 14px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background .18s ease, transform .15s ease;
+  position: relative;
+}
+.line:hover { background: var(--bg-soft); }
+.line:hover .line-icon { color: var(--primary); }
+.line.playing {
+  background: linear-gradient(90deg, var(--primary-soft), transparent 80%);
+  transform: translateX(2px);
+}
+.line.playing .line-icon { color: var(--primary); }
+.line.playing::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 8px; bottom: 8px;
+  width: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+.line.loading .line-icon::before {
+  content: "";
+  display: block;
+  width: 12px; height: 12px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+.line.loading .line-icon { font-size: 0; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.line-icon {
+  display: inline-grid; place-items: center;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  color: var(--ink-soft);
+  font-size: 10px;
+  flex-shrink: 0;
+  transition: color .15s, background .15s;
+  margin-top: 3px;
+}
+.line:hover .line-icon { background: var(--primary-soft); }
+.line.playing .line-icon { background: var(--primary); color: #fff; }
+.line-content { min-width: 0; }
+.line-zh {
+  font-family: "Noto Serif SC", serif;
+  font-size: clamp(20px, 2.3vw, 26px);
+  font-weight: 500;
+  letter-spacing: .04em;
+  line-height: 2.2;
+  color: var(--ink);
+}
+.line-zh .sub { display: block; }
+
+/* Ruby (per-character pinyin) */
+ruby {
+  ruby-position: over;
+  ruby-align: center;
+  margin: 0 1px;
+}
+rt {
+  font-family: "Noto Serif SC", "Noto Sans JP", serif;
+  font-style: italic;
+  font-size: 0.42em;
+  font-weight: 500;
+  color: var(--secondary);
+  letter-spacing: .01em;
+  line-height: 1;
+  padding-bottom: 4px;
+}
+.text-card.theme-duck rt { color: var(--water); }
+
+.line-ja {
+  font-family: "Shippori Mincho", "Noto Serif JP", serif;
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-top: 8px;
+  line-height: 1.65;
+}
+
+body.no-pinyin rt { display: none; }
+body.no-pinyin .line-zh { line-height: 1.55; }
+body.no-ja .line-ja { display: none; }
+
+/* ---------- Card themes ---------- */
+.text-card.theme-duck { background-image: radial-gradient(circle at 95% 8%, rgba(199,150,52,.08), transparent 40%); }
+.text-card.theme-duck .card-label .num { background: var(--gold); }
+.text-card.theme-duck .section-tag { color: var(--water); border-color: var(--water); }
+.text-card.theme-duck .section-play { color: var(--water); border-color: var(--water); }
+.text-card.theme-duck .section-play:hover { background: var(--water); color: #fff; }
+.text-card.theme-duck .line.playing { background: linear-gradient(90deg, rgba(90,138,155,.18), transparent 80%); }
+.text-card.theme-duck .line.playing::before { background: var(--water); }
+.text-card.theme-duck .line.playing .line-icon { background: var(--water); color: #fff; }
+.text-card.theme-duck .line-pinyin { color: var(--water); }
+.text-card.theme-duck .play-all:hover { background: var(--water); }
+
+.corner-deco {
+  position: absolute; top: 16px; right: 22px;
+  opacity: .14; pointer-events: none;
+  width: 88px; height: 88px;
+}
+
+.footer { text-align: center; margin-top: 48px; font-family: "Noto Serif SC", serif; }
+.footer .jiayou {
+  font-size: 36px; color: var(--primary);
+  font-weight: 700; letter-spacing: .1em;
+}
+.footer .jiayou::after { content: "!"; color: var(--gold); }
+.footer .footer-sub {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 12px; color: var(--ink-soft);
+  margin-top: 8px; letter-spacing: .1em;
+}
+
+/* Practice methods */
+.method-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+.method-card h3 {
+  font-family: "Shippori Mincho", serif;
+  font-size: 15px; color: var(--ink);
+  margin-bottom: 10px; font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.method-card h3::before {
+  content: "練"; 
+  display: inline-grid; place-items: center;
+  font-family: "Noto Serif SC", serif;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--secondary); color: #fff;
+  font-size: 11px;
+}
+.method-card ol { padding-left: 22px; }
+.method-card ol li { margin-bottom: 4px; }
+
+/* ---------- Selection screen ---------- */
+.select-intro {
+  text-align: center;
+  margin: 8px 0 28px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.select-intro .step {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: .3em;
+  color: var(--primary);
+  font-weight: 700;
+  padding: 4px 14px;
+  border: 1px solid var(--primary);
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.select-intro h2 {
+  font-family: "Shippori Mincho", serif;
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: .05em;
+}
+.select-intro h2 .zh {
+  font-family: "Noto Serif SC", serif;
+  color: var(--primary);
+  margin: 0 4px;
+}
+.select-intro p {
+  margin-top: 8px;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.select-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.select-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 36px 32px 32px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s, border-color .25s;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.select-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(42,36,28,.08), 0 24px 48px -12px rgba(42,36,28,.18);
+  border-color: var(--primary);
+}
+.select-card.duck:hover { border-color: var(--gold); }
+.select-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 0 var(--primary);
+  transition: box-shadow .25s;
+}
+.select-card:hover::after { box-shadow: inset 0 0 0 2px var(--primary); }
+.select-card.duck:hover::after { box-shadow: inset 0 0 0 2px var(--gold); }
+
+.select-num {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Noto Serif SC", serif;
+  font-size: 12px;
+  letter-spacing: .2em;
+  color: var(--ink-soft);
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+.select-num .circle {
+  display: inline-grid;
+  place-items: center;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+.select-card.duck .select-num .circle { background: var(--gold); }
+
+.select-title {
+  font-family: "Noto Serif SC", serif;
+  font-weight: 700;
+  font-size: clamp(28px, 3.4vw, 38px);
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: .04em;
+  margin-bottom: 6px;
+}
+.select-jp {
+  font-family: "Shippori Mincho", serif;
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+  letter-spacing: .05em;
+}
+
+.select-preview {
+  flex: 1;
+  background: var(--bg-soft);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 22px;
+  font-family: "Noto Serif SC", serif;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  letter-spacing: .04em;
+  position: relative;
+}
+.select-preview::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 16px; bottom: 16px;
+  width: 3px;
+  background: var(--primary);
+  opacity: .35;
+  border-radius: 2px;
+}
+.select-card.duck .select-preview::before { background: var(--gold); }
+
+.select-meta {
+  display: flex;
+  gap: 16px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+.select-meta .item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.select-meta .item::before {
+  content: "";
+  width: 4px; height: 4px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+.select-card.duck .select-meta .item::before { background: var(--gold); }
+
+.select-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 20px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 999px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .08em;
+  transition: background .2s, gap .2s;
+}
+.select-card:hover .select-cta {
+  background: var(--primary);
+  gap: 18px;
+}
+.select-card.duck:hover .select-cta { background: var(--gold); }
+.select-cta .arrow {
+  display: inline-block;
+  transition: transform .2s;
+}
+.select-card:hover .select-cta .arrow { transform: translateX(3px); }
+
+.select-deco {
+  position: absolute;
+  top: 18px; right: 22px;
+  opacity: .18;
+  pointer-events: none;
+  width: 64px; height: 64px;
+}
+
+/* Back navigation (shown when text selected) */
+.back-bar {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+.back-bar.show { display: flex; }
+.back-btn {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  padding: 8px 16px 8px 12px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .15s ease;
+}
+.back-btn:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+.back-btn::before { content: "←"; font-size: 16px; }
+.back-current {
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: .05em;
+}
+.back-current strong {
+  color: var(--ink);
+  font-weight: 700;
+  font-family: "Noto Serif SC", serif;
+  margin-left: 4px;
+}
+
+/* Hide content until selected */
+body.no-selection .controls,
+body.no-selection .method-card,
+body.no-selection .text-card,
+body.no-selection .footer { display: none; }
+body:not(.no-selection) .select-screen { display: none; }
+
+/* Audio error toast */
+.audio-error {
+  display: none;
+  position: fixed;
+  bottom: 24px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(184,68,58,.3);
+  z-index: 100;
+}
+.audio-error.show { display: block; animation: fadein .2s ease; }
+@keyframes fadein { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+@media (max-width: 720px) {
+  body { padding: 20px 12px 60px; }
+  header.hero { grid-template-columns: 1fr; }
+  .hero-meta { text-align: left; }
+  .select-grid { grid-template-columns: 1fr; gap: 16px; }
+  .select-card { padding: 28px 24px 24px; }
+  .text-card { padding: 24px 20px; }
+  .card-head { flex-direction: column; align-items: stretch; }
+  .card-actions { width: 100%; }
+  .play-all { width: 100%; justify-content: center; }
+  .line { grid-template-columns: 22px 1fr; gap: 10px; padding: 12px 10px; }
+  .line-icon { width: 22px; height: 22px; }
+  .controls { gap: 8px 12px; }
+  .stop-btn { margin-left: 0; width: 100%; justify-content: center; margin-top: 6px; }
+}
+</style>
+</head>
+<body class="no-selection">
+<div class="container">
+
+  <header class="hero">
+    <div>
+      <h1 class="hero-title"><span class="zh">朗読文</span>原稿</h1>
+      <p class="hero-sub">2026年度 第１８回愛知淑徳大学中国語スピーチコンテスト </p>
+      <span class="audio-source-badge"> 一文ずつクリックして発音を聞こう</span>
+    </div>
+    <div class="hero-meta">
+      <strong>愛知淑徳大学</strong>
+      交流文化学部<br>
+      締め切り：7月20日 15:00
+    </div>
+  </header>
+
+  <!-- ============ Selection screen ============ -->
+  <div class="select-screen">
+    <div class="select-intro">
+      <span class="step">STEP 01</span>
+      <h2>練習する<span class="zh">朗读文</span>を選んでください</h2>
+      <p>どちらか1つをクリックすると、練習画面に進みます</p>
+    </div>
+
+    <div class="select-grid">
+      <!-- 朗読文① -->
+      <button class="select-card duck" data-pick="1">
+        <svg class="select-deco" viewBox="0 0 100 100" fill="none">
+          <ellipse cx="55" cy="62" rx="28" ry="18" fill="#c79634"/>
+          <circle cx="38" cy="48" r="14" fill="#c79634"/>
+          <circle cx="34" cy="46" r="2.5" fill="#2a241c"/>
+          <path d="M28 50 Q22 48 22 52 Q22 55 28 53" fill="#b8443a"/>
+        </svg>
+        <div class="select-num"><span class="circle">①</span>朗読文 ／ FIRST PIECE</div>
+        <div class="select-title">小小鸭子</div>
+        <div class="select-jp">小さなアヒル</div>
+        <div class="select-preview">
+          小小鸭子，嘎嘎嘎嘎叫。<br>
+          走起路来真好笑。<br>
+          摇摇摆，摆摇摇 ......
+        </div>
+        <div class="select-meta">
+          <span class="item">3段落</span>
+          <span class="item">リズミカル</span>
+          <span class="item">初級〜中級</span>
+        </div>
+        <span class="select-cta">この朗読文を練習する<span class="arrow">→</span></span>
+      </button>
+
+      <!-- 朗読文② -->
+      <button class="select-card" data-pick="2">
+        <svg class="select-deco" viewBox="0 0 100 100" fill="none">
+          <g transform="translate(50,50)">
+            <circle r="6" fill="#b8443a"/>
+            <ellipse cx="0" cy="-18" rx="7" ry="14" fill="#f3d6cf"/>
+            <ellipse cx="17" cy="-9" rx="7" ry="14" fill="#f3d6cf" transform="rotate(72 17 -9)"/>
+            <ellipse cx="11" cy="14" rx="7" ry="14" fill="#f3d6cf" transform="rotate(144 11 14)"/>
+            <ellipse cx="-11" cy="14" rx="7" ry="14" fill="#f3d6cf" transform="rotate(216 -11 14)"/>
+            <ellipse cx="-17" cy="-9" rx="7" ry="14" fill="#f3d6cf" transform="rotate(288 -17 -9)"/>
+          </g>
+        </svg>
+        <div class="select-num"><span class="circle">②</span>朗読文 ／ SECOND PIECE</div>
+        <div class="select-title">朱自清《春》节选</div>
+        <div class="select-jp">朱自清「春」(抜粋)</div>
+        <div class="select-preview">
+          盼望着，盼望着，<br>
+          东风来了，春天的脚步近了。<br>
+          一切都像刚睡醒的样子 ......
+        </div>
+        <div class="select-meta">
+          <span class="item">3段落</span>
+          <span class="item">叙情的</span>
+          <span class="item">中級〜上級</span>
+        </div>
+        <span class="select-cta">この朗読文を練習する<span class="arrow">→</span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============ Back navigation ============ -->
+  <div class="back-bar" id="backBar">
+    <button class="back-btn" id="backBtn">朗読文を変える</button>
+    <span class="back-current">練習中: <strong id="currentLabel"></strong></span>
+  </div>
+
+  <div class="method-card">
+    <h3>朗読の練習方法</h3>
+    <ol>
+      <li>まず全体の朗読を聞いて感覚を体験する。</li>
+      <li>全体の意味を見てニュアンスを理解する。</li>
+      <li>ピンイン付きの一文ずつ練習してからピンインなしの練習をする。各文字の正確さを最大限に追及する。</li>
+      <li>一段落ずつの朗読を練習する。できるだけ一段落ずつ暗記してみる。</li>
+      <li>最後に、もう一度文章全体の朗読を練習し、感情で表現する。</li>
+    </ol>
+  </div>
+
+  <div class="controls">
+    <div class="group">
+      <label>速度</label>
+      <div class="seg" id="rateSeg">
+        <button data-rate="0.7">遅い</button>
+        <button data-rate="0.85">少し遅い</button>
+        <button data-rate="1.0" class="active">普通</button>
+        <button data-rate="1.15">速い</button>
+      </div>
+    </div>
+    <div class="group">
+      <label>表示切替</label>
+      <button class="toggle on" id="togglePinyin"><span class="dot"></span>拼音</button>
+      <button class="toggle on" id="toggleJa"><span class="dot"></span>日本語訳</button>
+    </div>
+    <button class="stop-btn" id="stopBtn">停止</button>
+  </div>
+
+  <!-- ============ 朗読文① ============ -->
+  <article class="text-card theme-duck" id="card1">
+    <svg class="corner-deco" viewBox="0 0 100 100" fill="none">
+      <ellipse cx="55" cy="62" rx="28" ry="18" fill="#c79634"/>
+      <circle cx="38" cy="48" r="14" fill="#c79634"/>
+      <circle cx="34" cy="46" r="2.5" fill="#2a241c"/>
+      <path d="M28 50 Q22 48 22 52 Q22 55 28 53" fill="#b8443a"/>
+      <path d="M82 72 L92 70 L88 78 Z" fill="#c79634"/>
+    </svg>
+    <div class="card-head">
+      <div>
+        <div class="card-label"><span class="num">①</span>朗読文 ／ FIRST PIECE</div>
+        <h2 class="card-title">小小鸭子<span class="ja">小さなアヒル</span></h2>
+      </div>
+      <div class="card-actions">
+        <button class="play-all" data-audio="audio/1-all.m4a">全文を聞く</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag">第 一 段</span>
+        <span class="section-title">出かける前のアヒル</span>
+        <button class="section-play" data-audio="audio/1-1-full.m4a">段落練習</button>
+      </div>
+      <ul class="lines" data-lines="1-1"></ul>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag">第 二 段</span>
+        <span class="section-title">水浴びの様子</span>
+        <button class="section-play" data-audio="audio/1-2-full.m4a">段落練習</button>
+      </div>
+      <ul class="lines" data-lines="1-2"></ul>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag">第 三 段</span>
+        <span class="section-title">楽しんで家に帰る</span>
+        <button class="section-play" data-audio="audio/1-3-full.m4a">段落練習</button>
+      </div>
+      <ul class="lines" data-lines="1-3"></ul>
+    </div>
+  </article>
+
+  <!-- ============ 朗読文② ============ -->
+  <article class="text-card" id="card2">
+    <svg class="corner-deco" viewBox="0 0 100 100" fill="none">
+      <g transform="translate(50,50)">
+        <circle r="6" fill="#b8443a"/>
+        <ellipse cx="0" cy="-18" rx="7" ry="14" fill="#f3d6cf"/>
+        <ellipse cx="17" cy="-9" rx="7" ry="14" fill="#f3d6cf" transform="rotate(72 17 -9)"/>
+        <ellipse cx="11" cy="14" rx="7" ry="14" fill="#f3d6cf" transform="rotate(144 11 14)"/>
+        <ellipse cx="-11" cy="14" rx="7" ry="14" fill="#f3d6cf" transform="rotate(216 -11 14)"/>
+        <ellipse cx="-17" cy="-9" rx="7" ry="14" fill="#f3d6cf" transform="rotate(288 -17 -9)"/>
+      </g>
+    </svg>
+    <div class="card-head">
+      <div>
+        <div class="card-label"><span class="num">②</span>朗読文 ／ SECOND PIECE</div>
+        <h2 class="card-title">朱自清《春》节选<span class="ja">朱自清「春」(抜粋)</span></h2>
+      </div>
+      <div class="card-actions">
+        <button class="play-all" data-audio="audio/2-all.mp3">全文を聞く</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag">第 一 段</span>
+        <span class="section-title">春の訪れ</span>
+        <button class="section-play" data-audio="audio/2-1-full.mp3">段落練習</button>
+      </div>
+      <ul class="lines" data-lines="2-1"></ul>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag">第 二 段</span>
+        <span class="section-title">山・水・草の目覚め</span>
+        <button class="section-play" data-audio="audio/2-2-full.mp3">段落練習</button>
+      </div>
+      <ul class="lines" data-lines="2-2"></ul>
+    </div>
+
+    <div class="section">
+      <div class="section-head">
+        <span class="section-tag">第 三 段</span>
+        <span class="section-title">満開の花々</span>
+        <button class="section-play" data-audio="audio/2-3-full.mp3">段落練習</button>
+      </div>
+      <ul class="lines" data-lines="2-3"></ul>
+    </div>
+  </article>
+
+  <div class="footer">
+    <div class="jiayou">加油</div>
+    <div class="footer-sub">GANBARE ／ がんばれ</div>
+  </div>
+
+</div>
+
+<div class="audio-error" id="audioError">音声ファイルが読み込めません</div>
+
+<script>
+// ========== Data ==========
+// py is an array of pinyin — one entry per Chinese character (CJK), in order.
+// Punctuation does NOT consume a pinyin slot. Empty string "" means no pinyin (e.g., 儿 in 玩儿).
+const GROUPS = {
+  "1-1": [
+    {
+      audio: "audio/1-1-A.m4a",
+      lines: [
+        {zh:"小小鸭子，嘎嘎嘎嘎叫。", py:["xiǎo","xiǎo","yā","zi","gā","gā","gā","gā","jiào"], ja:"小さなアヒル、クワックワッと鳴く。"},
+        {zh:"走起路来真好笑。", py:["zǒu","qǐ","lù","lái","zhēn","hǎo","xiào"], ja:"歩く姿は本当に面白い。"}
+      ]
+    },
+    {
+      audio: "audio/1-1-B.m4a",
+      lines: [
+        {zh:"摇摇摆，摆摇摇，", py:["yáo","yáo","bǎi","bǎi","yáo","yáo"], ja:"ふらふらと、"},
+        {zh:"走到水里洗洗澡。", py:["zǒu","dào","shuǐ","lǐ","xǐ","xǐ","zǎo"], ja:"水に入って、入浴します。"}
+      ]
+    }
+  ],
+  "1-2": [
+    {
+      audio: "audio/1-2-A.m4a",
+      lines: [
+        {zh:"小小鸭子,嘎嘎嘎嘎叫,", py:["xiǎo","xiǎo","yā","zi","gā","gā","gā","gā","jiào"], ja:"小さなアヒル、クワックワッと鳴きます。"},
+        {zh:"洗个澡来身体好。", py:["xǐ","gè","zǎo","lái","shēn","tǐ","hǎo"], ja:"入浴するのは体によいです。"}
+      ]
+    },
+    {
+      audio: "audio/1-2-B.m4a",
+      lines: [
+        {zh:"洗洗洗,擦擦擦,", py:["xǐ","xǐ","xǐ","cā","cā","cā"], ja:"洗って、擦って、"},
+        {zh:"快快洗来,快快擦。", py:["kuài","kuài","xǐ","lái","kuài","kuài","cā"], ja:"早く洗って、擦ってください。"}
+      ]
+    }
+  ],
+  "1-3": [
+    {
+      audio: "audio/1-3-A.m4a",
+      lines: [
+        {zh:"小小鸭子,嘎嘎嘎嘎叫,", py:["xiǎo","xiǎo","yā","zi","gā","gā","gā","gā","jiào"], ja:"小さなアヒル、クワックワッと鳴きます。"},
+        {zh:"大家玩儿得哈哈哈哈笑。", py:["dà","jiā","wánr","","de","hā","hā","hā","hā","xiào"], ja:"みんな「ハハ」と笑います。"}
+      ]
+    },
+    {
+      audio: "audio/1-3-B.m4a",
+      lines: [
+        {zh:"摇摇摆,摆摇摇,", py:["yáo","yáo","bǎi","bǎi","yáo","yáo"], ja:"ふらふらと、"},
+        {zh:"回到家里去睡觉。", py:["huí","dào","jiā","lǐ","qù","shuì","jiào"], ja:"家に帰って早く寝ようよ。"}
+      ]
+    }
+  ],
+  "2-1": [
+    {
+      audio: "audio/2-1-A.mp3",
+      lines: [
+        {zh:"盼望着,盼望着,", py:["pàn","wàng","zhe","pàn","wàng","zhe"], ja:"待ちに待った、"},
+        {zh:"东风来了,春天的脚步近了。", py:["dōng","fēng","lái","le","chūn","tiān","de","jiǎo","bù","jìn","le"], ja:"東風がやってきた。春の足音が近づいてきた。"}
+      ]
+    },
+    {
+      audio: "audio/2-1-B.mp3",
+      lines: [
+        {zh:"一切都像刚睡醒的样子,", py:["yī","qiè","dōu","xiàng","gāng","shuì","xǐng","de","yàng","zi"], ja:"すべては今目覚めたばかりかのように、"},
+        {zh:"欣欣然张开了眼。", py:["xīn","xīn","rán","zhāng","kāi","le","yǎn"], ja:"気持ちよさそうに目を開いた。"}
+      ]
+    }
+  ],
+  "2-2": [
+    {
+      audio: "audio/2-2-A.mp3",
+      lines: [
+        {zh:"山朗润起来了,", py:["shān","lǎng","rùn","qǐ","lái","le"], ja:"山々は透き通って潤い始め、"},
+        {zh:"水长起来了,", py:["shuǐ","zhǎng","qǐ","lái","le"], ja:"水は増え始め、"},
+        {zh:"太阳的脸红起来了。", py:["tài","yáng","de","liǎn","hóng","qǐ","lái","le"], ja:"太陽の顔は赤くなってきた。"}
+      ]
+    },
+    {
+      audio: "audio/2-2-B.mp3",
+      lines: [
+        {zh:"小草偷偷地从土里钻出来,", py:["xiǎo","cǎo","tōu","tōu","de","cóng","tǔ","lǐ","zuān","chū","lái"], ja:"草はこっそりと土から出てきて、"},
+        {zh:"嫩嫩的,绿绿的。", py:["nèn","nèn","de","lǜ","lǜ","de"], ja:"とても柔らかく、色もとても鮮やかな緑だ。"}
+      ]
+    }
+  ],
+  "2-3": [
+    {
+      audio: "audio/2-3-A.mp3",
+      lines: [
+        {zh:"桃树、杏树、梨树,", py:["táo","shù","xìng","shù","lí","shù"], ja:"桃の木、杏の木、梨の木、"},
+        {zh:"你不让我,我不让你,", py:["nǐ","bú","ràng","wǒ","wǒ","bú","ràng","nǐ"], ja:"お互いに譲ろうとせず、"},
+        {zh:"都开满了花赶趟儿。", py:["dōu","kāi","mǎn","le","huā","gǎn","tàngr",""], ja:"どの木も間に合うように花を満開にさせた。"}
+      ]
+    },
+    {
+      audio: "audio/2-3-B.mp3",
+      lines: [
+        {zh:"红的像火,粉的像霞,白的像雪。", py:["hóng","de","xiàng","huǒ","fěn","de","xiàng","xiá","bái","de","xiàng","xuě"], ja:"花は火のように赤く、霞のようにピンク色で、また雪のように白い。"}
+      ]
+    }
+  ]
+};
+
+// Replace ASCII commas in source with full-width comma for display
+function normalizePunct(s) {
+  return s.replace(/,/g, "，");
+}
+
+// Build per-character ruby HTML.
+// zh is the source string; py is an array of pinyin tokens, one per CJK character.
+function renderRuby(zh, py) {
+  let pyIdx = 0;
+  let out = "";
+  for (const ch of zh) {
+    if (/[\u4e00-\u9fff]/.test(ch)) {
+      const p = py[pyIdx++];
+      if (p) {
+        out += `<ruby>${ch}<rt>${p}</rt></ruby>`;
+      } else {
+        out += ch;
+      }
+    } else {
+      out += ch;
+    }
+  }
+  return out;
+}
+
+// ========== Render ==========
+document.querySelectorAll(".lines[data-lines]").forEach(ul => {
+  const key = ul.dataset.lines;
+  const groups = GROUPS[key];
+  groups.forEach(group => {
+    const li = document.createElement("li");
+    li.className = "line";
+    li.dataset.audio = group.audio;
+    const zhHtml = group.lines
+      .map(l => `<span class="sub">${renderRuby(normalizePunct(l.zh), l.py)}</span>`)
+      .join("");
+    const jaHtml = group.lines
+      .map(l => `<span class="sub">${l.ja}</span>`)
+      .join("<br>");
+    li.innerHTML = `
+      <span class="line-icon" aria-hidden="true">▶</span>
+      <div class="line-content">
+        <div class="line-zh">${zhHtml}</div>
+        <div class="line-ja">${jaHtml}</div>
+      </div>`;
+    li.addEventListener("click", () => playAudio(group.audio, li));
+    ul.appendChild(li);
+  });
+});
+
+// ========== Audio engine ==========
+let audio = new Audio();
+let currentRate = 1.0;
+let currentEl = null;
+
+audio.addEventListener("play", () => {
+  setStopBtn(true);
+  if (currentEl) {
+    currentEl.classList.remove("loading");
+    currentEl.classList.add("playing");
+  }
+});
+audio.addEventListener("ended", () => {
+  setStopBtn(false);
+  clearState();
+});
+audio.addEventListener("pause", () => {
+  // Only treat as stop if not seeking
+  if (audio.currentTime === 0 || audio.ended) {
+    setStopBtn(false);
+    clearState();
+  }
+});
+audio.addEventListener("error", () => {
+  setStopBtn(false);
+  clearState();
+  showError();
+});
+
+function clearState() {
+  if (currentEl) {
+    currentEl.classList.remove("playing", "loading");
+    currentEl = null;
+  }
+}
+
+function setStopBtn(active) {
+  document.getElementById("stopBtn").classList.toggle("active", active);
+}
+
+function showError() {
+  const t = document.getElementById("audioError");
+  t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 2800);
+}
+
+function playAudio(src, el) {
+  // Stop currently playing
+  audio.pause();
+  audio.currentTime = 0;
+  clearState();
+
+  currentEl = el;
+  if (el) {
+    el.classList.add("loading");
+    el.scrollIntoView({behavior: "smooth", block: "center"});
+  }
+
+  audio.src = src;
+  audio.playbackRate = currentRate;
+  audio.preservesPitch = true;
+  audio.mozPreservesPitch = true;
+  audio.webkitPreservesPitch = true;
+  const p = audio.play();
+  if (p && p.catch) {
+    p.catch(err => {
+      clearState();
+      setStopBtn(false);
+      showError();
+      console.error("Audio play error:", err);
+    });
+  }
+}
+
+function stopAll() {
+  audio.pause();
+  audio.currentTime = 0;
+  setStopBtn(false);
+  clearState();
+}
+
+// ========== Buttons ==========
+document.querySelectorAll(".section-play").forEach(btn => {
+  btn.addEventListener("click", e => {
+    e.stopPropagation();
+    playAudio(btn.dataset.audio, null);
+  });
+});
+
+document.querySelectorAll(".play-all").forEach(btn => {
+  btn.addEventListener("click", e => {
+    e.stopPropagation();
+    playAudio(btn.dataset.audio, null);
+  });
+});
+
+document.getElementById("stopBtn").addEventListener("click", stopAll);
+
+// Rate
+document.querySelectorAll("#rateSeg button").forEach(b => {
+  b.addEventListener("click", () => {
+    document.querySelectorAll("#rateSeg button").forEach(x => x.classList.remove("active"));
+    b.classList.add("active");
+    currentRate = parseFloat(b.dataset.rate);
+    audio.playbackRate = currentRate;
+  });
+});
+
+// Toggles
+document.getElementById("togglePinyin").addEventListener("click", function() {
+  this.classList.toggle("on");
+  document.body.classList.toggle("no-pinyin", !this.classList.contains("on"));
+});
+document.getElementById("toggleJa").addEventListener("click", function() {
+  this.classList.toggle("on");
+  document.body.classList.toggle("no-ja", !this.classList.contains("on"));
+});
+
+// Stop when page hidden
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) stopAll();
+});
+
+// ========== Selection screen ==========
+const LABELS = {
+  "1": "朗読文① 小小鸭子",
+  "2": "朗読文② 朱自清《春》节选"
+};
+
+function pickText(num) {
+  stopAll();
+  document.body.classList.remove("no-selection");
+  document.getElementById("card1").style.display = (num === "1") ? "" : "none";
+  document.getElementById("card2").style.display = (num === "2") ? "" : "none";
+  document.getElementById("currentLabel").textContent = LABELS[num];
+  document.getElementById("backBar").classList.add("show");
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+function backToSelect() {
+  stopAll();
+  document.body.classList.add("no-selection");
+  document.getElementById("backBar").classList.remove("show");
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+document.querySelectorAll(".select-card").forEach(card => {
+  card.addEventListener("click", () => pickText(card.dataset.pick));
+});
+document.getElementById("backBtn").addEventListener("click", backToSelect);
+</script>
+</body>
+</html>
